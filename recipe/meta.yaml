@@ -51,8 +51,11 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: 'ECMWF ecFlow'
+  summary: "ECMWF ecFlow"
 
 extra:
   recipe-maintainers:
     - dtip
+    - avi369
+    - iainrussell
+    - StephanSiemen
