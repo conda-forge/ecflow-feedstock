@@ -23,6 +23,6 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
 
 make -j $CPU_COUNT
 
-make check
+ctest -VV
 
 make install
