@@ -23,6 +23,14 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
 
 make -j $CPU_COUNT
 
-make check
+
+# only run certain tests
+if [[ $(uname) == Linux ]]; then
+    echo "1,2,3,4,5,6,7,8" > ./test_list.txt
+elif [[ $(uname) == Darwin ]]; then
+    echo "1,2,3,4,5,6,8" > ./test_list.txt
+fi
+
+ctest -VV -I ./test_list.txt
 
 make install
