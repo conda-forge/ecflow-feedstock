@@ -19,6 +19,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D BOOST_ROOT=$PREFIX \
       -D ECBUILD_LOG_LEVEL=DEBUG \
       -D Python3_FIND_STRATEGY=LOCATION \
+      -D Python3_EXECUTABLE=$PYTHON
       ..
 
 make -j $CPU_COUNT
