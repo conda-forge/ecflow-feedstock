@@ -1,5 +1,5 @@
 {% set name = "ecFlow" %}
-{% set version = "5.2.3" %}
+{% set version = "5.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,10 +8,10 @@ package:
 source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
   url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
-  sha256: 8a863a33a23d61c0e85c28eab7292409b99567a902f80566a07731e524258c01
+  sha256: 129cc59d4e4bfa77d15a5caf58d077c95253296dd159dc8450b029ca3c4ab075
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
 
 requirements:
