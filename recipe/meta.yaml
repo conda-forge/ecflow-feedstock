@@ -1,5 +1,5 @@
 {% set name = "ecFlow" %}
-{% set version = "5.3.1" %}
+{% set version = "5.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
   url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
-  sha256: 129cc59d4e4bfa77d15a5caf58d077c95253296dd159dc8450b029ca3c4ab075
+  sha256: 171492557a7d377cb421d75bcaa6ddf08d03755aed427d20f69ae041862fe9fb
 
 build:
   number: 1
@@ -51,7 +51,7 @@ about:
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
-  summary: "ECMWF ecFlow"
+  summary: ECMWF ecFlow
 
 extra:
   recipe-maintainers:
