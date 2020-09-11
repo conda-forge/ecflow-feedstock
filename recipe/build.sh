@@ -20,6 +20,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_PYTHON=1 \
       -D ENABLE_SSL=0 \
       -D BOOST_ROOT=$PREFIX \
+      -D Boost_USE_STATIC_LIBS=OFF \
       -D Boost_DEBUG=ON \
       -D ECBUILD_LOG_LEVEL=DEBUG \
       -D Python3_FIND_STRATEGY=LOCATION \
