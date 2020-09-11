@@ -13,6 +13,9 @@ which python
 echo "python version"
 python --version
 
+ls -l $PREFIX
+ls -l $PREFIX/lib
+
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_PYTHON=1 \
       -D ENABLE_SSL=0 \
