@@ -8,8 +8,8 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
-  url: https://confluence.ecmwf.int/download/attachments/30048389/{{ name }}-{{ version }}-Source.tar.gz
-  sha256: 5265323dee069259446c8c2f7ebc1ff9af8870bfdcf011fa919b2fefdca8f6d9
+  url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
+  sha256: 3aafc795b7c2a03f322f4b5c20f9a10225a8722eedf5830df66a94b94f1cd529
 
 
 build:
