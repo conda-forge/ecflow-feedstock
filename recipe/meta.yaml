@@ -44,8 +44,7 @@ test:
   commands:
     - ecflow_client --help
     - ecflow_server --help
-    - ecflow_standalone --help
-    - ecflow_ui_log -h
+    - ecflow_standalone -v
 
 about:
   home: https://confluence.ecmwf.int/display/ECFLOW
