@@ -1,5 +1,5 @@
 {% set name = "ecFlow" %}
-{% set version = "5.5.3" %}
+{% set version = "5.6.0" %}
 
 
 package:
@@ -9,11 +9,11 @@ package:
 source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
   url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
-  sha256: 3aafc795b7c2a03f322f4b5c20f9a10225a8722eedf5830df66a94b94f1cd529
+  sha256: 15db6e320c689417e48048a9bbce41ed334c447a09ffd18333e85b6cf24a181c
 
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
@@ -42,8 +42,6 @@ requirements:
 
 test:
   commands:
-    - conda inspect linkages -p $PREFIX ecflow
-    - conda inspect objects -p $PREFIX ecflow  # [osx]
     - ecflow_client --help
     - ecflow_server --help
     - ecflow_standalone --help
