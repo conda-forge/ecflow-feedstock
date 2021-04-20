@@ -15,7 +15,7 @@ python --version
 
 cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_PYTHON=1 \
-      -D ENABLE_SSL=0 \
+      -D ENABLE_SSL=1 \
       -D BOOST_ROOT=$PREFIX \
       -D ECBUILD_LOG_LEVEL=DEBUG \
       -D ENABLE_STATIC_BOOST_LIBS=OFF \
