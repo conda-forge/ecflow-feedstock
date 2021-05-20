@@ -6,6 +6,11 @@ set -e # Abort on error.
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
+export UNDEF_LOOKUP=0
+if [[ $(uname) == Darwin ]]; then
+    export UNDEF_LOOKUP=1
+fi
+
 mkdir build && cd build
 
 echo "which python"
@@ -21,6 +26,7 @@ cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_STATIC_BOOST_LIBS=OFF \
       -D Python3_FIND_STRATEGY=LOCATION \
       -D Python3_EXECUTABLE=$PYTHON \
+      -D ENABLE_PYTHON_UNDEF_LOOKUP=$UNDEF_LOOKUP \
       ..
 
 make -j $CPU_COUNT
