@@ -18,7 +18,7 @@ which python
 echo "python version"
 python --version
 
-cmake -D CMAKE_INSTALL_PREFIX=$PREFIX \
+cmake ${CMAKE_ARGS} -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_PYTHON=1 \
       -D ENABLE_SSL=1 \
       -D BOOST_ROOT=$PREFIX \
@@ -39,6 +39,8 @@ elif [[ $(uname) == Darwin ]]; then
     echo "1,2,3,4,5,6,8" > ./test_list.txt
 fi
 
+if [[ "${CONDA_BUILD_CROSS_COMPILATION:-}" != "1" || "${CROSSCOMPILING_EMULATOR}" != "" ]]; then
 ctest -VV -I ./test_list.txt
+fi
 
 make install
