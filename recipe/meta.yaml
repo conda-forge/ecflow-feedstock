@@ -13,7 +13,7 @@ source:
 
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -50,7 +50,7 @@ test:
     - ecflow_standalone -v
 
 about:
-  home: https://confluence.ecmwf.int/display/ECFLOW
+  home: https://ecflow.readthedocs.io/en/latest/
   license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
