@@ -13,7 +13,7 @@ source:
 
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -36,10 +36,12 @@ requirements:
   host:
     - python
     - boost
+    - openssl >=3.0.0
     - qt-main
     - xorg-libxfixes  # [linux]
   run:
     - python
+    - openssl >=3.0.0
     - qt-main
     - boost
 
