@@ -36,12 +36,10 @@ requirements:
   host:
     - python
     - boost
-    - openssl >=3.0.0
     - qt-main
     - xorg-libxfixes  # [linux]
   run:
     - python
-    - openssl >=3.0.0
     - qt-main
     - boost
 
