@@ -29,7 +29,7 @@ cmake ${CMAKE_ARGS} -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_PYTHON_UNDEF_LOOKUP=$UNDEF_LOOKUP \
       ..
 
-make -j $CPU_COUNT
+make -j $CPU_COUNT VERBOSE=1
 
 
 # only run certain tests
