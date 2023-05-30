@@ -1,0 +1,25 @@
+From 6ee443f5787ce61c2656fee16ebf2c59e3599c11 Mon Sep 17 00:00:00 2001
+From: Marcos Bento <Marcos.Bento@ecmwf.int>
+Date: Tue, 30 May 2023 10:31:18 +0200
+Subject: [PATCH] Correct UDP test linkage with Boost dynamic libraries
+ ECFLOW-1881
+
+---
+ Udp/CMakeLists.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Udp/CMakeLists.txt b/Udp/CMakeLists.txt
+index 3d4e98dc1..d31bda9a6 100644
+--- a/Udp/CMakeLists.txt
++++ b/Udp/CMakeLists.txt
+@@ -115,7 +115,7 @@ ecbuild_add_test(
+   DEPENDS
+     ${SERVER_TARGET}
+   DEFINITIONS
+-    ECFLOW_UDP_CLIENT_BASED_ON_BOOST_ASIO
++    ${BOOST_TEST_DYN_LINK}
+   INCLUDES
+     src
+     ../json
+--
+2.32.0 (Apple Git-132)
