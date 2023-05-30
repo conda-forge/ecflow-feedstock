@@ -12,6 +12,7 @@ source:
   sha256: d18acd93d42f8ccdff9fc3f07d5a9667ff4861e53c40af35de36ce77ab100bb8
   patches:
     - 0001-Add-missing-includes-ECFLOW-1881.patch
+    - 0002-Correct-UDP-test-linkage-with-Boost-dynamic-librarie.patch
 
 build:
   number: 0
