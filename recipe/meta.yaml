@@ -13,6 +13,9 @@ source:
   patches:
     - 0001-Add-missing-includes-ECFLOW-1881.patch
     - 0002-Correct-UDP-test-linkage-with-Boost-dynamic-librarie.patch
+    - 0003-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
+    - 0004-Correct-typo-in-comment-ECFLOW-1881.patch
+    - 0005-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
 
 build:
   number: 0
