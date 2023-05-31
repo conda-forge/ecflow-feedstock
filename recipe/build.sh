@@ -6,7 +6,7 @@ set -e # Abort on error.
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
-if [[ $(uname) == Darwin ]]; then
+if [[ $(uname -s) == Darwin && $(uname -m) == x86_64 ]]; then
     export CXXFLAGS="-DBOOST_ASIO_DISABLE_STD_ALIGNED_ALLOC=1"
 fi
 
