@@ -16,6 +16,7 @@ source:
     - 0003-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
     - 0004-Correct-typo-in-comment-ECFLOW-1881.patch
     - 0005-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
+    - 0006-Add-needed-include-time.h.patch
 
 build:
   number: 0
