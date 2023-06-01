@@ -1,10 +1,38 @@
 #!/usr/bin/env bash
 
 set -e # Abort on error.
+set -x # Display executed commands
+
+ENABLE_SSL=ON
+ENABLE_PYTHON=ON
+ENABLE_HTTP=ON
+ENABLE_UDP=ON
+ENABLE_UI=ON
 
 # find the boost libs/includes we need
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
+
+# The following ${target_platform} are supported
+#  - target_platform=linux-64
+#  - target_platform=osx-arm64
+#  - target_platform=osx-64
+
+if [[ $(uname) == Darwin && ${target_platform} == osx-64 ]]; then
+    # Disable use of std::aligned_alloc by boost, as this is not available on macOS 10.9
+    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_STD_ALIGNED_ALLOC"
+
+    # Disable ecflow_http build, as it uses C++17 features only available on macOS 10.12+
+    ENABLE_HTTP=OFF
+    # Disable ecflow_udp build, as it uses C++17 features only available on macOS 10.13+
+    ENABLE_UDP=OFF
+fi
+
+# Diagnostic information
+${CXX} --version
+${CXX} -dM -E - <<HERE
+#include <sys/socket.h>
+HERE
 
 export UNDEF_LOOKUP=0
 if [[ $(uname) == Darwin ]]; then
@@ -18,9 +46,13 @@ which python
 echo "python version"
 python --version
 
-cmake ${CMAKE_ARGS} -D CMAKE_INSTALL_PREFIX=$PREFIX \
-      -D ENABLE_PYTHON=1 \
-      -D ENABLE_SSL=1 \
+cmake ${CMAKE_ARGS} \
+      -D CMAKE_INSTALL_PREFIX=$PREFIX \
+      -D ENABLE_PYTHON=$ENABLE_PYTHON \
+      -D ENABLE_SSL=$ENABLE_SSL \
+      -D ENABLE_HTTP=$ENABLE_HTTP \
+      -D ENABLE_UDP=$ENABLE_UDP \
+      -D ENABLE_UI=$ENABLE_UI \
       -D BOOST_ROOT=$PREFIX \
       -D ECBUILD_LOG_LEVEL=DEBUG \
       -D ENABLE_STATIC_BOOST_LIBS=OFF \
@@ -29,7 +61,7 @@ cmake ${CMAKE_ARGS} -D CMAKE_INSTALL_PREFIX=$PREFIX \
       -D ENABLE_PYTHON_UNDEF_LOOKUP=$UNDEF_LOOKUP \
       ..
 
-make -j $CPU_COUNT
+make -j $CPU_COUNT VERBOSE=1
 
 
 # only run certain tests

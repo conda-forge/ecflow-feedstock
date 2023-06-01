@@ -1,0 +1,24 @@
+From acb1d7ddf265fa3f9ecf5447f2233f6dda3ef8f2 Mon Sep 17 00:00:00 2001
+From: Marcos Bento <Marcos.Bento@ecmwf.int>
+Date: Wed, 31 May 2023 16:28:23 +0200
+Subject: [PATCH] Add needed #include <time.h> ECFLOW-1991
+
+#include <time.h> defines both the function clock_gettime() and the flag CLOCK_REALTIME used in this TU.
+---
+ Http/src/ApiV1Impl.cpp | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Http/src/ApiV1Impl.cpp b/Http/src/ApiV1Impl.cpp
+index 37e6a3b8f..67511eeec 100644
+--- a/Http/src/ApiV1Impl.cpp
++++ b/Http/src/ApiV1Impl.cpp
+@@ -19,6 +19,7 @@
+ #include <mutex>
+ #include <string>
+ #include <thread>
++#include <time.h>
+
+ #include <condition_variable>
+
+--
+2.32.0 (Apple Git-132)

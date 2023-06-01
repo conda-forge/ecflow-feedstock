@@ -1,0 +1,24 @@
+From 8e4ceb2f3d9157c834730642af4d46f341ba5a73 Mon Sep 17 00:00:00 2001
+From: Marcos Bento <Marcos.Bento@ecmwf.int>
+Date: Wed, 31 May 2023 08:23:55 +0200
+Subject: [PATCH 2/3] Correct typo in comment ECFLOW-1881
+
+---
+ Http/src/ApiV1.hpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Http/src/ApiV1.hpp b/Http/src/ApiV1.hpp
+index 3389f465c..ced17075b 100644
+--- a/Http/src/ApiV1.hpp
++++ b/Http/src/ApiV1.hpp
+@@ -19,7 +19,7 @@
+ 
+ #include <sys/socket.h>
+ #if defined(MSG_NOSIGNAL)
+-// The MSG_NOSIGNAL flag should be made defined by <sys/socket.h>
++// The MSG_NOSIGNAL flag should be defined by <sys/socket.h>
+ // (as per POSIX: https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/functions/send.html),
+ // but that is not always the case for OSX.
+ //
+-- 
+2.32.0 (Apple Git-132)

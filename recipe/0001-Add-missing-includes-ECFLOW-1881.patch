@@ -1,0 +1,37 @@
+From a0efc321ae7f12b452d61e1fe344bf4d8983013d Mon Sep 17 00:00:00 2001
+From: Marcos Bento <Marcos.Bento@ecmwf.int>
+Date: Fri, 26 May 2023 16:19:42 +0200
+Subject: [PATCH] Add missing #includes ECFLOW-1881
+
+This allows a successful build on GCC 12
+---
+ Udp/src/UDPServerEnvironment.hpp | 1 +
+ Udp/test/TestSupport.hpp         | 1 +
+ 2 files changed, 2 insertions(+)
+
+diff --git a/Udp/src/UDPServerEnvironment.hpp b/Udp/src/UDPServerEnvironment.hpp
+index a89eb2dfb..b4187e40e 100644
+--- a/Udp/src/UDPServerEnvironment.hpp
++++ b/Udp/src/UDPServerEnvironment.hpp
+@@ -11,6 +11,7 @@
+ #ifndef ECFLOW_UDP_UDPSERVERENVIRONMENT_HPP
+ #define ECFLOW_UDP_UDPSERVERENVIRONMENT_HPP
+
++#include <optional>
+ #include <string>
+ #include <vector>
+
+diff --git a/Udp/test/TestSupport.hpp b/Udp/test/TestSupport.hpp
+index f4fc74bb6..8ab0d244b 100644
+--- a/Udp/test/TestSupport.hpp
++++ b/Udp/test/TestSupport.hpp
+@@ -12,6 +12,7 @@
+ #define ECFLOW_UDP_TESTSUPPORT_HPP
+
+ #include <memory>
++#include <thread>
+
+ #include <boost/asio.hpp>
+ #include <boost/filesystem.hpp>
+--
+2.32.0 (Apple Git-132)
