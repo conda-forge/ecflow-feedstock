@@ -17,6 +17,7 @@ source:
     - 0004-Correct-typo-in-comment-ECFLOW-1881.patch
     - 0005-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
     - 0006-Add-needed-include-time.h.patch
+    - 0007-Remove-unused-Timer-class.patch
 
 build:
   number: 0
