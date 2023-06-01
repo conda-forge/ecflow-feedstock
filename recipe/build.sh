@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e # Abort on error.
+set -x # Display executed commands
 
 # find the boost libs/includes we need
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
