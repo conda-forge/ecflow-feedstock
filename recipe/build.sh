@@ -7,9 +7,20 @@ set -x # Display executed commands
 export LDFLAGS="$LDFLAGS -L$PREFIX/lib -Wl,-rpath,$PREFIX/lib"
 export CFLAGS="$CFLAGS -fPIC -I$PREFIX/include"
 
-if [[ $(uname -s) == Darwin && $(uname -m) == x86_64 ]]; then
-    export CXXFLAGS="-DBOOST_ASIO_DISABLE_STD_ALIGNED_ALLOC=1"
+# The following ${target_platform} are supported
+#  - target_platform=linux-64
+#  - target_platform=osx-arm64
+#  - target_platform=osx-64
+
+if [[ $(uname) == Darwin && ${target_platform} == osx-64 ]]; then
+    export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_STD_ALIGNED_ALLOC"
 fi
+
+# Diagnostic information
+clang++ --version
+clang++ -dM -E - <<HERE
+#include <sys/socket.h>
+HERE
 
 export UNDEF_LOOKUP=0
 if [[ $(uname) == Darwin ]]; then
