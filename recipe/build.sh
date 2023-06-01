@@ -17,8 +17,8 @@ if [[ $(uname) == Darwin && ${target_platform} == osx-64 ]]; then
 fi
 
 # Diagnostic information
-clang++ --version
-clang++ -dM -E - <<HERE
+${CXX} --version
+${CXX} -dM -E - <<HERE
 #include <sys/socket.h>
 HERE
 
