@@ -22,8 +22,10 @@ if [[ $(uname) == Darwin && ${target_platform} == osx-64 ]]; then
     # Disable use of std::aligned_alloc by boost, as this is not available on macOS 10.9
     export CXXFLAGS="$CXXFLAGS -DBOOST_ASIO_DISABLE_STD_ALIGNED_ALLOC"
 
-    # Disable ecflow_http build, as it uses C++ features only available on macOS 10.12+
+    # Disable ecflow_http build, as it uses C++17 features only available on macOS 10.12+
     ENABLE_HTTP=OFF
+    # Disable ecflow_udp build, as it uses C++17 features only available on macOS 10.13+
+    ENABLE_UDP=OFF
 fi
 
 # Diagnostic information
