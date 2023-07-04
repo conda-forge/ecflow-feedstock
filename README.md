@@ -222,4 +222,5 @@ Feedstock Maintainers
 * [@avi369](https://github.com/avi369/)
 * [@dtip](https://github.com/dtip/)
 * [@iainrussell](https://github.com/iainrussell/)
+* [@marcosbento](https://github.com/marcosbento/)
 
