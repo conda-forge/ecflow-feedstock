@@ -1,5 +1,5 @@
 {% set name = "ecFlow" %}
-{% set version = "5.11.0" %}
+{% set version = "5.11.1" %}
 
 
 package:
@@ -9,10 +9,8 @@ package:
 source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
   url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
-  sha256: d18acd93d42f8ccdff9fc3f07d5a9667ff4861e53c40af35de36ce77ab100bb8
+  sha256: c9d4273a5723bc9baec2b4cd4a3dc4daeced7d7b14c2ea899876861ad8708e28
   patches:
-    - 0001-Add-missing-includes-ECFLOW-1881.patch
-    - 0002-Correct-UDP-test-linkage-with-Boost-dynamic-librarie.patch
     - 0003-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
     - 0004-Correct-typo-in-comment-ECFLOW-1881.patch
     - 0005-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
