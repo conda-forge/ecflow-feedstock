@@ -1,5 +1,5 @@
 {% set name = "ecFlow" %}
-{% set version = "5.11.1" %}
+{% set version = "5.11.3" %}
 
 
 package:
@@ -9,13 +9,7 @@ package:
 source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
   url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
-  sha256: c9d4273a5723bc9baec2b4cd4a3dc4daeced7d7b14c2ea899876861ad8708e28
-  patches:
-    - 0003-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
-    - 0004-Correct-typo-in-comment-ECFLOW-1881.patch
-    - 0005-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
-    - 0006-Add-needed-include-time.h.patch
-    - 0007-Remove-unused-Timer-class.patch
+  sha256: 66f4959e88b94dfecb7901a9370916bb57fa8b2cdaa2889099a907a706b655ec
 
 build:
   number: 0
