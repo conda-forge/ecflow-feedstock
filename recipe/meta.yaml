@@ -10,12 +10,6 @@ source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
   url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
   sha256: 66f4959e88b94dfecb7901a9370916bb57fa8b2cdaa2889099a907a706b655ec
-  patches:
-    - 0003-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
-    - 0004-Correct-typo-in-comment-ECFLOW-1881.patch
-    - 0005-Use-MSG_NOSIGNAL-only-when-defined-ECFLOW-1881.patch
-    - 0006-Add-needed-include-time.h.patch
-    - 0007-Remove-unused-Timer-class.patch
 
 build:
   number: 0
