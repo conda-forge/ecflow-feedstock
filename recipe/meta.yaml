@@ -12,7 +12,7 @@ source:
   sha256: 66f4959e88b94dfecb7901a9370916bb57fa8b2cdaa2889099a907a706b655ec
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -34,13 +34,13 @@ requirements:
     - {{ cdt('libxau') }}  # [linux]
   host:
     - python
-    - boost
+    - libboost-python-devel
     - qt-main
     - xorg-libxfixes  # [linux]
   run:
     - python
     - qt-main
-    - boost
+    - libboost-python-devel
 
 test:
   commands:
