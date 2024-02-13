@@ -60,7 +60,7 @@ cmake ${CMAKE_ARGS} \
       -D Python3_EXECUTABLE=$PYTHON \
       -D ENABLE_PYTHON_UNDEF_LOOKUP=$UNDEF_LOOKUP \
       -D CEREAL_INCLUDE_DIRS=../3rdparty/cereal/include \
-      -D JSON_INCLUDE_DIRS=.../3rdparty/json/include \
+      -D JSON_INCLUDE_DIRS=../3rdparty/json/include \
       -D HTTPLIB_INCLUDE_DIRS=../3rdparty/cpp-httplib/include \
       ..
 
