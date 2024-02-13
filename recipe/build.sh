@@ -59,6 +59,7 @@ cmake ${CMAKE_ARGS} \
       -D Python3_FIND_STRATEGY=LOCATION \
       -D Python3_EXECUTABLE=$PYTHON \
       -D ENABLE_PYTHON_UNDEF_LOOKUP=$UNDEF_LOOKUP \
+      -D CEREAL_INCLUDE_DIRS=../3rdparty/cereal/include \
       ..
 
 make -j $CPU_COUNT VERBOSE=1
