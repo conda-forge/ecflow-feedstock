@@ -44,6 +44,8 @@ fi
 
 mkdir build && cd build
 
+conda info
+
 echo "which python"
 which python
 echo "python version"
