@@ -38,10 +38,12 @@ requirements:
     - libboost-python-devel
     - qt-main
     - xorg-libxfixes  # [linux]
+    - zlib  # [linux]
   run:
     - python
     - qt-main
     - libboost-python-devel
+    - zlib  # [linux]
 
 test:
   commands:
