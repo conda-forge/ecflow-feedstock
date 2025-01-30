@@ -39,11 +39,13 @@ requirements:
     - qt-main
     - xorg-libxfixes  # [linux]
     - zlib  # [linux]
+    - libxcrypt  # [linux]
   run:
     - python
     - qt-main
     - libboost-python-devel
     - zlib  # [linux]
+    - libxcrypt  # [linux]
 
 test:
   commands:
