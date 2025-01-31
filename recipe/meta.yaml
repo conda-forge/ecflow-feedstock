@@ -12,7 +12,7 @@ source:
   sha256: 11e1b693fc8f6aa834fc5a9c34503573f6391464b1c21d5023e4726c79aa9df1
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
 
 requirements:
@@ -39,11 +39,13 @@ requirements:
     - qt-main
     - xorg-libxfixes  # [linux]
     - zlib  # [linux]
+    - libxcrypt  # [linux]
   run:
     - python
     - qt-main
     - libboost-python-devel
     - zlib  # [linux]
+    - libxcrypt  # [linux]
 
 test:
   commands:
