@@ -1,5 +1,5 @@
 {% set name = "ecFlow" %}
-{% set version = "5.16.0" %}
+{% set version = "5.17.0" %}
 
 
 package:
@@ -9,16 +9,17 @@ package:
 source:
   fn: {{ name }}-{{ version }}-Source.tar.gz
   url: https://confluence.ecmwf.int/download/attachments/8650755/{{ name }}-{{ version }}-Source.tar.gz
-  sha256: 666f804473e0bdc63f51e0b74531217c74f6e6ed40a33c11f7d2916918489741
+  sha256: 01223d93cc31d976fd955c37a03d4a145cfd27a81db86b5b94878275e94e4ec5
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - pybind11
     - cmake
     - make
     - {{ compiler('c') }}
@@ -26,7 +27,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - libboost-python-devel
+    - libboost-devel
     - qt-main
     - xorg-libxfixes  # [linux]
     - zlib  # [linux]
@@ -34,8 +35,8 @@ requirements:
     - libgl-devel                    # [linux]
   run:
     - python
+    - libboost-devel
     - qt-main
-    - libboost-python-devel
     - zlib  # [linux]
     - libxcrypt  # [linux]
 
