@@ -19,6 +19,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - pybind11
     - cmake
     - make
     - {{ compiler('c') }}
@@ -26,7 +27,6 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
-    - libboost-python-devel
     - qt-main
     - xorg-libxfixes  # [linux]
     - zlib  # [linux]
@@ -35,7 +35,6 @@ requirements:
   run:
     - python
     - qt-main
-    - libboost-python-devel
     - zlib  # [linux]
     - libxcrypt  # [linux]
 
