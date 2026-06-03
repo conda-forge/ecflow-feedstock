@@ -27,6 +27,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - python
+    - libboost-devel
     - qt-main
     - xorg-libxfixes  # [linux]
     - zlib  # [linux]
@@ -34,6 +35,7 @@ requirements:
     - libgl-devel                    # [linux]
   run:
     - python
+    - libboost-devel
     - qt-main
     - zlib  # [linux]
     - libxcrypt  # [linux]
